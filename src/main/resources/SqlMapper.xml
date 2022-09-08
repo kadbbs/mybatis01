@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace也是找到数据文件的标识，id作为给其他文件找到的标识，resultType找到给予数据的Java类-->
+<mapper namespace="dfgdrgrszdgdrz">
+
+    <select id="selectBlog" resultType="com.student">
+        select id,name,birth from student
+    </select>
+</mapper>
