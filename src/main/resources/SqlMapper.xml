@@ -8,4 +8,8 @@
     <select id="selectBlog" resultType="com.student">
         select id,name,birth from student
     </select>
+    <insert id="insert" >
+        insert into student(name,birth)
+        values('郑小号','2000-6-2');
+    </insert>
 </mapper>

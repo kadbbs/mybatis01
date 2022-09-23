@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Iterator;
 import java.util.List;
 
 public class main {
@@ -17,12 +18,19 @@ public class main {
         SqlSession sqlSession=sqlSessionFactory.openSession();
 
         //do work
+        int count=sqlSession.insert("insert");
         List<student> studentList=sqlSession.selectList("selectBlog");
+
         //结束
         sqlSession.commit();
         sqlSession.close();
         //text
-        for(student s:studentList){
+//        for(student s:studentList){
+//            System.out.println(s.getId()+"  "+s.getName()+"  "+s.getBirth());
+//        }
+        Iterator<student> stu= studentList.listIterator();
+        while (stu.hasNext()){
+            student s=stu.next();
             System.out.println(s.getId()+"  "+s.getName()+"  "+s.getBirth());
         }
 //        System.out.println("main");
